@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSM Downloader - Elite & Covert Edition</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0f;
+            --text-color: #00ff00;
+            --box-bg: rgba(0, 0, 0, 0.7);
+            --accent-color: #00ff00;
+            --danger-color: #ff3333;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        .container {
+            background: var(--box-bg);
+            border: 1px solid var(--text-color);
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid var(--text-color);
+            padding-bottom: 10px;
+        }
+
+        .input-group {
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            background: #000;
+            border: 1px solid var(--text-color);
+            color: var(--text-color);
+            font-family: monospace;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 5px var(--accent-color);
+        }
+
+        button {
+            background: #000;
+            color: var(--text-color);
+            border: 1px solid var(--text-color);
+            padding: 10px 20px;
+            font-family: monospace;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: var(--text-color);
+            color: #000;
+        }
+
+        .output-box {
+            margin-top: 20px;
+            padding: 10px;
+            background: #050505;
+            border: 1px dashed var(--text-color);
+            word-break: break-all;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 11px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>[ CSM HACKER RADAR ]</h2>
+        <div class="input-group">
+            <label for="urlInput">> ENTER_TARGET_URL:</label>
+            <input type="text" id="urlInput" placeholder="https://..." autocomplete="off">
+        </div>
+        <button onclick="processLink()">EXTRACT LINK</button>
+
+        <div class="output-box" id="outputBox">> READY...</div>
+    </div>
+
+    <div class="footer">Developer: csm mohasin Alam</div>
+
+    <script>
+        function processLink() {
+            let url = document.getElementById('urlInput').value;
+            let outputBox = document.getElementById('outputBox');
+            
+            if (url === "") {
+                outputBox.innerHTML = "<span style='color: var(--danger-color)'>[!] ERROR: NO INPUT PROVIDED.</span>";
+            } else {
+                outputBox.innerHTML = "Processing link... please wait.";
+                // পরবর্তীতে এখানে ব্যাকএন্ডের লিংক যুক্ত করা হবে
+            }
+        }
+    </script>
+</body>
+</html>
